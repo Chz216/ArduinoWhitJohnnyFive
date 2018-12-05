@@ -19,8 +19,9 @@
           	<p>Con este ejemplo vamos a controlar un LED RGB a través de una web. Cuando pulsemos uno de los botones el LED encederá o apagará</p>
         	</div>
         		<div class="col-md-3">
-              <p> <button id="b_off" type="button" class="btn btn-lg btn-default">Prender</button>
-              <p> <button id="b_on" type="button" class="btn btn-lg btn-default">Apagar</button>
+              <h1>Cocina</h1>
+              <p> <button id="b_off_cocina" type="button" class="btn btn-lg btn-default">Prender</button>
+              <p> <button id="b_on_cocina" type="button" class="btn btn-lg btn-default">Apagar</button>
         		</div>
         	</div>
      <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -34,8 +35,9 @@
     		function onLed(){
     		    socket.emit('on');
     		}
-		document.getElementById('b_off').onclick = offLed;
-		document.getElementById('b_on').onclick = onLed;
+
+		document.getElementById('b_off_cocina').onclick = offLed;
+		document.getElementById('b_on_cocina').onclick = onLed;
      </script>
   </body>
 </html>

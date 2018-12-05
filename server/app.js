@@ -8,26 +8,25 @@ app.get('/', function (req,res) {
 });
 
 
-var board = new five.Board({
-  	repl:false
-});
+var board = new five.Board();
 
 board.on('ready', function () {
     var speed, commands;
-    var anode = new five.Led(13);
+
+    var array = new five.Leds([2, 13, 4]);
 
     commands = null;
 
-    anode.on();
+    array.on();
 
     io.on('connection', function (socket) {
 
         socket.on('off', function (){
-            anode.off();  // to shut it off (stop doesn't mean "off")
+            array.off();
         });
 
         socket.on('on', function (){
-            anode.on(); // to turn on, but not blink
+            array.on();
         });
 
     });
